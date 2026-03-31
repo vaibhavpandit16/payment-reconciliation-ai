@@ -1,4 +1,5 @@
 import os
+import streamlit as st
 from openai import OpenAI
 from dotenv import load_dotenv
 
@@ -6,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Initialize client
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key = st.secrets["OPENAI_API_KEY"])
 
 def generate_explanation(summary):
     prompt = f"""
